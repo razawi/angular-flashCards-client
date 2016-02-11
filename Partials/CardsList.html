@@ -5,12 +5,18 @@
         <tr>
             <th>Name</th>
             <th>Category</th>
+            <th>face</th>
+            <th>face</th>
+            <th>face</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="card in cardslist">
             <td>{{card.name}}</td>
             <td>{{card.subcategory[0].symbol}}</td>
+            <td>{{card.facess[0].text}} {{card.facess[0].symbol}}</td>
+            <td>{{card.facess[1].text}} {{card.facess[1].symbol}}</td>
+            <td>{{card.facess[2].text}} {{card.facess[2].symbol}}</td>
         </tr>
         </tbody>
     </table>
