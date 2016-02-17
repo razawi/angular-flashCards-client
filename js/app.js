@@ -3,11 +3,11 @@ angular.module('flashCardsApp', ['ngResource', 'ngRoute'])
         $routeProvider
             .when('/', {
                 controller:  'cardlist',
-                templateUrl: 'https://fierce-taiga-41516.herokuapp.com/public/apps/flashCards-client/Partials/CardsList.html'
+                templateUrl: 'http://127.0.0.1:8888/public/apps/flashCards-client/Partials/CardsList.html'
             })
             .when('/cardview:id', {
                 controller:  'cardview',
-                templateUrl: 'https://fierce-taiga-41516.herokuapp.com/public/apps/flashCards-client/Partials/CardView.html'
+                templateUrl: 'http://127.0.0.1:8888/public/apps/flashCards-client/Partials/CardView.html'
             })
             .otherwise('/')
     }]);

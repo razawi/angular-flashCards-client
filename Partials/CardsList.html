@@ -2,22 +2,29 @@
     <h1>Cards full list</h1>
     <table class="table">
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>face</th>
-            <th>face</th>
-            <th>face</th>
-        </tr>
+        <tr> category </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="card in cardslist">
-            <td>{{card.name}}</td>
-            <td>{{card.subcategory[0].symbol}}</td>
-            <td>{{card.facess[0].text}} {{card.facess[0].symbol}}</td>
-            <td>{{card.facess[1].text}} {{card.facess[1].symbol}}</td>
-            <td>{{card.facess[2].text}} {{card.facess[2].symbol}}</td>
-        </tr>
-        </tbody>
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>face</th>
+                <th>face</th>
+                <th>face</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="card in cardslist">
+                <td <label><input type="checkbox"/></label></td>
+                <td>{{card.name}}</td>
+                <td>{{card.facess[0].text}} {{card.facess[0].symbol}}</td>
+                <td>{{card.facess[1].text}} {{card.facess[1].symbol}}</td>
+                <td>{{card.facess[2].text}} {{card.facess[2].symbol}}</td>
+            </tr>
+            </tbody>
+        </table>
+      </tbody>
     </table>
 </div>
