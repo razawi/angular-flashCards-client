@@ -1,3 +1,5 @@
+### deprecated
+
 # betterFlashCards-client
 
 This is a submodule for the [betterFlahCards](https://github.com/razawi/betterFlahCards) project.
