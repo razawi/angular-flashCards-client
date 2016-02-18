@@ -3,30 +3,70 @@
 angular.module('flashCardsApp')
     .controller('cardlist', ['$scope', '$http', function($scope, $http) {
 
-        $http.get('http://127.0.0.1:8888/api/listallcards').success(function(response){
+        $http.get('http://127.0.0.1:8888/api/cards/category/56c0f292cb6c22504acc10f1').success(function(response){
             $scope.cardslist = response;
-            console.log("$scope.cardslist");
+            console.log("$scope.tree_data");
 
 
+            var chiled = [ {
+                Name : response[1].name,
+                children:[{
+                    symbol : response[1].facess[0].symbol,
+                    text : response[1].facess[0].text
+                    },{
+                    symbol : response[1].facess[1].symbol,
+                    text : response[1].facess[1].text
+                },{
+                    symbol : response[1].facess[2].symbol,
+                    text : response[1].facess[2].text
+                }]
+            },{
+                Name : response[5].name,
+                children:[{
+                    symbol : response[5].facess[0].symbol,
+                    text : response[5].facess[0].text
+                },{
+                    symbol : response[5].facess[1].symbol,
+                    text : response[5].facess[1].text
+                },{
+                    symbol : response[5].facess[2].symbol,
+                    text : response[5].facess[2].text
+                }]
+            }];
+
+            var tree_data = [{
+                category : "food",
+                Name : "name",
+                children : chiled
+            }];
+
+            debugger;
+            $scope.__tree_data = JSON.stringify(tree_data);
+
+            
         })
 
-        $scope.tree_data = [
-            {Name:"USA",Area:9826675,Population:318212000,TimeZone:"UTC -5 to -10",
-                children:[
-                    {Name:"California", Area:423970,Population:38340000,TimeZone:"Pacific Time",
-                        children:[
-                            {Name:"San Francisco", Area:231,Population:837442,TimeZone:"PST"},
-                            {Name:"Los Angeles", Area:503,Population:3904657,TimeZone:"PST"}
-                        ]
-                    },
-                    {Name:"Illinois", Area:57914,Population:12882135,TimeZone:"Central Time Zone",
-                        children:[
-                            {Name:"Chicago", Area:234,Population:2695598,TimeZone:"CST"}
-                        ]
-                    }
-                ]
-            },
-            {Name:"Texas",Area:268581,Population:26448193,TimeZone:"Mountain"}
-        ];
+        $scope.tree_data = [{"text":"food", "name":"name", "symbol" : "category", "children":[
+            {"text" : "אגס", "name":"אגס", "symbol" : "card","children":[
+                {"text": "injas", "name":"eng", "symbol":"face"},
+                {"text": "אִנְגַ'אס'", "name":"arb", "symbol":"face" },
+                {"text": "אגס", "name":"heb", "symbol":"face"}]},
+            {"text": "אוכל", "name":"אוכל", "symbol" : "card", "children":[{"symbol":"eng","text":"A-kel"},
+                {"text": "אכל", "name":"arb","symbol":"face"},
+                {"text": "אוכל", "name":"heb","symbol":"face"}]}]}]
 
-    }]);
+        }]);
+
+//for (var i = 0, len = response.length; i < len; i++) {
+//    var dat = {
+//        category : response[i].subcategory[0].symbol,
+//        name : response[i].name,
+//    };
+//
+//    for (var j =0,facelen = facess.length; h < facelen; h++){
+//        response[i].facess[0].symbol,
+//            response[i].facess[0].text,
+//    }
+//
+//    tree_data[i] = dat;
+//};
