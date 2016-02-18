@@ -1,72 +1,66 @@
 'use strict';
+// openIssue: do I need _.js here ?
 
 angular.module('flashCardsApp')
     .controller('cardlist', ['$scope', '$http', function($scope, $http) {
+// http://127.0.0.1:8888/api/cards/category/56c0f292cb6c22504acc10f1
+        $http.get('http://127.0.0.1:8888/api/listallcards').success(function(response) {
+            var treeData = []; // curriculum / categorys / cards / facess
 
-        $http.get('http://127.0.0.1:8888/api/cards/category/56c0f292cb6c22504acc10f1').success(function(response){
-            $scope.cardslist = response;
-            console.log("$scope.tree_data");
+            // better performance than Array.prototype.forEach()
+            // create card
+            for (var i = 0, len = response.length; i < len; i++) {
+                var dat = {
+                    "text" : response[i].facess[1].text,
+                    "name" : response[i].name,
+                    "symbol" : "card",
+                    children : []
+                };
+                for (var j =0, facelen = response[i].facess.length; j < facelen; j++){
+                    var face = {
+                        "text"   : response[i].facess[j].text,
+                        "name"   : response[i].facess[j].symbol,
+                        "symbol" : "face",
+                    }
+                    dat.children.push(face);
+                }
+
+                debugger;
+
+                // if create categery
+                //    "text" : response[i].facess[1].text,
+                //    "name" : response[i].name,
+                //    "symbol" : "categery",
+                //    children : []
+
+                // if create curriculum
+                //    "text" : response[i].facess[1].text,
+                //    "name" : response[i].name,
+                //    "symbol" : "curriculum",
+                //    children : []
+
+                // find or create curicula and category
 
 
-            var chiled = [ {
-                Name : response[1].name,
-                children:[{
-                    symbol : response[1].facess[0].symbol,
-                    text : response[1].facess[0].text
-                    },{
-                    symbol : response[1].facess[1].symbol,
-                    text : response[1].facess[1].text
-                },{
-                    symbol : response[1].facess[2].symbol,
-                    text : response[1].facess[2].text
-                }]
-            },{
-                Name : response[5].name,
-                children:[{
-                    symbol : response[5].facess[0].symbol,
-                    text : response[5].facess[0].text
-                },{
-                    symbol : response[5].facess[1].symbol,
-                    text : response[5].facess[1].text
-                },{
-                    symbol : response[5].facess[2].symbol,
-                    text : response[5].facess[2].text
-                }]
-            }];
+                treeData.push(dat);
+            }
 
-            var tree_data = [{
-                category : "food",
-                Name : "name",
-                children : chiled
-            }];
+            var stubObject = [{"text":"food", "name":"name", "symbol" : "category", "children":[
+                    {"text" : "אגס", "name":"אגס", "symbol" : "card","children":[
+                        {"text": "injas", "name":"eng", "symbol":"face"},
+                        {"text": "אִנְגַ'אס'", "name":"arb", "symbol":"face" },
+                        {"text": "אגס", "name":"heb", "symbol":"face"}]},
+                    {"text": "אוכל", "name":"אוכל", "symbol" : "card", "children":[
+                        {"text":"A-kel", "name":"eng", "symbol":"face", "children":[{"text": "test", "name":"test","symbol":"test"} ]},
+                        {"text": "אכל", "name":"arb","symbol":"face"},
+                        {"text": "אוכל", "name":"heb","symbol":"face"}]}]}];
 
-            debugger;
-            $scope.__tree_data = JSON.stringify(tree_data);
-
-            
+            $scope.tree_data = treeData;
         })
 
-        $scope.tree_data = [{"text":"food", "name":"name", "symbol" : "category", "children":[
-            {"text" : "אגס", "name":"אגס", "symbol" : "card","children":[
-                {"text": "injas", "name":"eng", "symbol":"face"},
-                {"text": "אִנְגַ'אס'", "name":"arb", "symbol":"face" },
-                {"text": "אגס", "name":"heb", "symbol":"face"}]},
-            {"text": "אוכל", "name":"אוכל", "symbol" : "card", "children":[{"symbol":"eng","text":"A-kel"},
-                {"text": "אכל", "name":"arb","symbol":"face"},
-                {"text": "אוכל", "name":"heb","symbol":"face"}]}]}]
+        $scope.tree_data =[{"text":"", "name":"", "symbol" : ""}];
 
         }]);
 
-//for (var i = 0, len = response.length; i < len; i++) {
-//    var dat = {
-//        category : response[i].subcategory[0].symbol,
-//        name : response[i].name,
-//    };
-//
-//    for (var j =0,facelen = facess.length; h < facelen; h++){
-//        response[i].facess[0].symbol,
-//            response[i].facess[0].text,
-//    }
-//
-//    tree_data[i] = dat;
-//};
+//debugger;
+//$scope.tree_data = JSON.stringify(tree_data);
