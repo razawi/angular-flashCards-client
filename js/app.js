@@ -1,4 +1,6 @@
-angular.module('flashCardsApp', ['ngResource', 'ngRoute'])
+'use strict';
+
+angular.module('flashCardsApp', ['ngResource', 'ngRoute', 'treeGrid'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('flashCardsApp')
     .controller('cardlist', ['$scope', '$http', function($scope, $http) {
         // param
