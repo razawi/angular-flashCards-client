@@ -3,64 +3,76 @@
 
 angular.module('flashCardsApp')
     .controller('cardlist', ['$scope', '$http', function($scope, $http) {
-// http://127.0.0.1:8888/api/cards/category/56c0f292cb6c22504acc10f1
+
         $http.get('http://127.0.0.1:8888/api/listallcards').success(function(response) {
             var treeData = []; // curriculum / categorys / cards / facess
 
-            // better performance than Array.prototype.forEach()
             // create card
+            // better performance than Array.prototype.forEach()
             for (var i = 0, len = response.length; i < len; i++) {
                 var dat = {
-                    "text" : response[i].facess[1].text,
-                    "name" : response[i].name,
-                    "symbol" : "card",
-                    children : []
+                    "text": response[i].facess[1].text,
+                    "name": response[i].name,
+                    "symbol": "card",
+                    children: []
                 };
-                for (var j =0, facelen = response[i].facess.length; j < facelen; j++){
+                for (var j = 0, facelen = response[i].facess.length; j < facelen; j++) {
                     var face = {
-                        "text"   : response[i].facess[j].text,
-                        "name"   : response[i].facess[j].symbol,
-                        "symbol" : "face",
+                        "text": response[i].facess[j].text,
+                        "name": response[i].facess[j].symbol,
+                        "symbol": "face",
                     }
                     dat.children.push(face);
                 }
 
-                debugger;
+                var curloc = findWithAttr(treeData, "text", response[i].subcategory[0].curricula[0].name);
 
-                // if create categery
-                //    "text" : response[i].facess[1].text,
-                //    "name" : response[i].name,
-                //    "symbol" : "categery",
-                //    children : []
+                var curdat = {};
+                if (curloc === -1) {
+                  curdat = {
+                    "text" : response[i].subcategory[0].curricula[0].name,
+                    "name" : response[i].subcategory[0].curricula[0].name + ' : curriculum',
+                    "symbol" : "curriculum",
+                    children :[]
+                  }
 
-                // if create curriculum
-                //    "text" : response[i].facess[1].text,
-                //    "name" : response[i].name,
-                //    "symbol" : "curriculum",
-                //    children : []
+                  treeData.push(curdat);
+                }
+                else {
+                    curdat = treeData[curloc];
+                }
 
-                // find or create curicula and category
+                var catloc = findWithAttr(curdat.children, "text", response[i].subcategory[0].symbol)
 
-
-                treeData.push(dat);
-            }
-
-            var stubObject = [{"text":"food", "name":"name", "symbol" : "category", "children":[
-                    {"text" : "אגס", "name":"אגס", "symbol" : "card","children":[
-                        {"text": "injas", "name":"eng", "symbol":"face"},
-                        {"text": "אִנְגַ'אס'", "name":"arb", "symbol":"face" },
-                        {"text": "אגס", "name":"heb", "symbol":"face"}]},
-                    {"text": "אוכל", "name":"אוכל", "symbol" : "card", "children":[
-                        {"text":"A-kel", "name":"eng", "symbol":"face", "children":[{"text": "test", "name":"test","symbol":"test"} ]},
-                        {"text": "אכל", "name":"arb","symbol":"face"},
-                        {"text": "אוכל", "name":"heb","symbol":"face"}]}]}];
-
+                var catdat = {};
+                if (catloc === -1){ // convert to try catch
+                  catdat = {
+                    "text" : response[i].subcategory[0].symbol,
+                    "name" : response[i].subcategory[0].symbol + ' : ' + response[i].subcategory[0].curricula[0].name,
+                    "symbol"   : "categery",
+                    "children" : []
+                  }
+                  curdat.children.push(catdat)
+                }
+                else {
+                    catdat = curdat.children[catloc];
+                }
+                catdat.children.push(dat);
+              }
+            debugger;
             $scope.tree_data = treeData;
         })
 
+        // Initialize tree fields
         $scope.tree_data =[{"text":"", "name":"", "symbol" : ""}];
 
-        }]);
+        function findWithAttr (array, attr, value) {
+            for(var i = 0; i < array.length; i += 1) {
+                if(array[i][attr] === value) {
+                    return i;
+                }
+            }
+            return -1;
+        }
 
-//debugger;
-//$scope.tree_data = JSON.stringify(tree_data);
+    }]);
