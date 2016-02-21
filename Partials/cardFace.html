@@ -1,0 +1,16 @@
+
+
+
+<div class="wrapper" Id="boxWrap">
+    <button type="button" Id="RightInRec" ng-click="faceRight()"> > </button>
+    <button type="button" Id="LeftInRec" ng-click="faceLeft()"> < </button>
+    <button type="button" Id="UpCard" ng-click="previousCard();"> ^ </button>
+    <button type="button" Id="DownCard" ng-click="nextCard();"> V </button>
+
+    <div Id="loading" dw-loading="face" dw-loading-options="{text: 'Loading face...'}" >    </div>
+      <div id="textBody">{{faceText}}</div>
+      <div id="faceSymbol">{{symbolText}}</div>
+
+
+</div>
+

@@ -1,15 +1,30 @@
 'use strict';
 
-angular.module('flashCardsApp', ['ngResource', 'ngRoute', 'treeGrid'])
+angular.module('flashCardsApp', ['ngResource', 'ngRoute', 'treeGrid',
+    'darthwade.loading'])
+
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
-                controller:  'cardlist',
-                templateUrl: 'http://127.0.0.1:8888/public/apps/flashCards-client/Partials/CardsList.html'
+                controller:  'fullCardlistCtrl',
+                templateUrl: '/public/apps/angular-client/Partials/CardsList.html'
             })
-            .when('/cardview:id', {
-                controller:  'cardview',
-                templateUrl: 'http://127.0.0.1:8888/public/apps/flashCards-client/Partials/CardView.html'
+            .when('/cardspile/:categoryId', {
+                controller:  'cardPileCtrl',
+                templateUrl: '/public/apps/angular-client/Partials/CardPile.html'
+            })
+            //.when('/cardview/:cardId', {
+            //    controller:  'cardViewCtrl',
+            //    templateUrl: '/public/apps/angular-client/Partials/cardFace.html'
+            //})
+            .when('/faceview/:ctegoryId/:cardnum/:facenum', {
+                controller:  'faceViewCtrl',
+                templateUrl: '/public/apps/angular-client/Partials/cardFace.html'
+            })
+            .when('/categories/:curriculumId', {
+                controller:  'categoryListCtrl',
+                templateUrl: '/public/apps/angular-client/Partials/categoryList.html'
             })
             .otherwise('/')
+            // TODO: view and controller for:  cardEdit, CategoryEdit, curiculum edit
     }]);
