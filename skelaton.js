@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
     drawCategories();
+    drawCards();
+    drawCurricula();
 
 });
 
@@ -44,8 +46,6 @@ function drawCards(){
            html: table
        }).appendTo( "body" );
      });
-
-    
 }
 
 
@@ -84,7 +84,7 @@ function drawCurricula(){
 
 
 
-function drawCategories(){ // server side bug in categories
+function drawCategories(){ 
     $.getJSON( 'http://127.0.0.1:8888/api/categoriesList', function( data ) {
         var displayData = _.map(data, mapper)
 
