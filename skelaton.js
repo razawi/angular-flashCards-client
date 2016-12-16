@@ -6,47 +6,48 @@ $( document ).ready(function() {
 
 
 function drawCurricula(){
-        $.getJSON( 'http://127.0.0.1:8888/api/curriculaList', function( data ) {
-
-        function faceMapper(face){
-            return _.pick(face, 'symbol', 'text');
-        }
+    $.getJSON( 'http://127.0.0.1:8888/api/curriculaList', function( data ) {
 
         function mapper(card){
             dispData={};
-            dispData.name = _.pick(card, 'name');
-            dispData.facess = _.map(card.facess, faceMapper);
+            dispData = _.pick(card, 'name');
+            dispData.facess = _.map(card.facess, function (face){
+                return _.pick(face, 'symbol', 'text');
+            });
 
             return dispData;
         }
 
         var displayData = _.map(data, mapper)
 
+        var headTempl =  '<table id="curiculaTable" class="table table-striped"> <thead> <tr>';
+        var seperator =  '</thead>  <tbody> '; 
+        var footer = '</tbody>  </table>';
+        var titles = '<th>Name</th> ';
+        var lines =  ''; 
 
-        var headers = [];
-        var content = [];
+       $.each( displayData[0].facess, function( key, val ) {
+            titles += ' <th> ' + val.symbol + ' </th> '
+       });
 
-        debugger;
+       $.each( displayData, function( key, card ) { 
+           debugger;
+           lines += '<tr> <td> ' + card.name + '</td>';
+           $.each( card.facess, function( num, face ) { 
+                lines += '<td> ' + face.text + '</td>'; 
+           });
+           lines+="</tr>";
+       });
 
+       var table = headTempl + titles + seperator + lines + footer;
 
-        // Dynamic table display 
+       $( "<table/>", {
+           id : "curiculaTable",
+           class: "table table-striped",
+           html: table
+       }).appendTo( "body" );
 
-        $.each( dispData, function( key, val ) {
-            if (key === "facess"){
-                $.each( val, function( num, face ) { 
-                    debugger;
-                });
-            }
-            else
-                items.push( "<li id='" + key + "'>" + val + "</li>" );
-        });
-        
-        $( "<ul/>", {
-            "class": "my-new-list",
-            html: items.join( "" )
-        }).appendTo( "body" );
     });
-
 }
 
 function drawCards(){
