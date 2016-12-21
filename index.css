@@ -6,7 +6,7 @@ p {
 
     #curiculaTable{
         width: 90%;
-        background:yellow;
+        background:red;
     }
 }
 
@@ -22,6 +22,6 @@ p {
 
     #curiculaTable{
         width: 600px;
-        background:red;
+        /*background:yellow;*/
     }
 }

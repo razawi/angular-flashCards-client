@@ -83,10 +83,19 @@ function drawCurricula(){
 }
 
 
+function catMapper(card){
+    dispData={};
+    dispData = _.pick(card, 'symbol', '', '');
+    dispData.facess = _.map(card.facess, function (face){
+        return _.pick(face, 'symbol', 'text');
+    });
+
+    return dispData;
+}
 
 function drawCategories(){ 
     $.getJSON( 'http://127.0.0.1:8888/api/categoriesList', function( data ) {
-        var displayData = _.map(data, mapper)
+        var displayData = _.map(data, catMapper)
 
         var headTempl =  '<table id="curiculaTable" class="table table-striped"> <thead> <tr>';
         var seperator =  '</thead>  <tbody> '; 
@@ -99,7 +108,7 @@ function drawCategories(){
        });
 
        $.each( displayData, function( key, card ) { 
-           lines += '<tr> <td> ' + card.name + '</td>';
+           lines += '<tr> <td> ' + card.symbol + '</td>';
            $.each( card.facess, function( num, face ) { 
                 lines += '<td> ' + face.text + '</td>'; 
            });
