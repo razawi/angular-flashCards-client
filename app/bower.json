@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/razawi/angular-ui-seed.git",
   "dependencies": {
-    "angular": "latest",
+    "angular": "1.2.32",
     "angular-ui-router": "~0.2.10",
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.x",
