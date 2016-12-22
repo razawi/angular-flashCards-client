@@ -13,7 +13,6 @@ I believe It's more scalable and developer convinient to divide it to
 navbar
 ---NavbarCtrl.js
 ---navbar.tmpl.html
----navbar.tmpl.css
 profile
 ---ProfileCtrl.js
 ---profile.tmpl.html
@@ -30,4 +29,5 @@ npm install http-server
 http-server
 ```
 
-The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project and of course be sure to checkout the [full project doc](https://github.com/razawi/betterFlashCards)
+The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project 
+be sure to checkout the [full project doc](https://github.com/razawi/betterFlashCards)
