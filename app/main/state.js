@@ -7,11 +7,6 @@ app.config(['$stateProvider', function($stateProvider) {
       templateUrl: 'myprofile/profile.tpl.html',
       controller: 'myprofile/ProfileCtrl'
     })
-    .state('app.shop', {
-      url: '/about',
-      templateUrl: 'shop/shop.tpl.html',
-      controller: 'ShopCtrl'
-    })
     .state('app.curricula', {
       url: '/curricula',
       templateUrl: 'curricula/curricula.tpl.html',
