@@ -10,17 +10,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
       controller: 'AppCtrl',
       views: {
         'navbar': {
-          templateUrl: 'core/templates/navbar.tpl.html',
+          templateUrl: 'core/navbar.tpl.html',
           controller: 'NavbarCtrl'
         },
         'main': {
-          templateUrl: 'core/templates/main.tpl.html'
+          templateUrl: 'core/main.tpl.html'
         }
       }
     })
     .state('404', {
       url: '/404',
-      templateUrl: 'core/templates/404.tpl.html',
+      templateUrl: 'core/404.tpl.html',
       controller: 'AppCtrl'
     });
 
