@@ -1,5 +1,4 @@
-app.controller('CategoryCtrl', ['$scope', function($scope) {
-   debugger;
+app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
 
    // show all cards per Category 
 
@@ -15,16 +14,10 @@ app.controller('CategoryCtrl', ['$scope', function($scope) {
         return dispData;
     }
 
-
-    //  $.getJSON('http://127.0.0.1:8888/api/cardsList', function( data ) {
-
-    //     var displayData = _.map(data, mapper)
-
-    //     var headTempl =  '<table id="curiculaTable" class="table table-striped"> <thead> <tr>';
-    //     var seperator =  '</thead>  <tbody> '; 
-    //     var footer = '</tbody>  </table>';
-    //     var titles = '<th>Name</th> ';
-    //     var lines =  ''; 
+    $http.get('http://127.0.0.1:8888/api/cardsList').success(function(response){
+         $scope.cards = _.map(response, mapper)
+          debugger;
+    });
 
     //    $.each( displayData[0].facess, function( key, val ) {
     //         titles += ' <th> ' + val.symbol + ' </th> '
@@ -45,4 +38,5 @@ app.controller('CategoryCtrl', ['$scope', function($scope) {
     //        html: table
     //    }).appendTo( "body" );
     //  });
+
 }]);

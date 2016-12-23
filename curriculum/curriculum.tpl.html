@@ -1,10 +1,12 @@
 <div class="table-list">
 
-    <p class="title"> Curriculum List</p>
+    <p class="title">Curriculum Listt</p>
 
-    <table class="curricula-list table">
-        <tr> <th>Name</th> </tr>
-        <tr> <td>{{data[0].name}}</td> </tr>
+    <table border="1" class="category-list table">
+        
+        <tr>  <th>Name</th> </tr>
+        <tr ng-repeat="c in curics"> <td>{{c.name}}</td> </tr>
+        <tr><td>Test</td></tr>
+        
     </table>
-
 </div>

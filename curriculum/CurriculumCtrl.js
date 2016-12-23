@@ -1,6 +1,4 @@
-app.controller('CurriculumCtrl', ['$scope', function($scope) {
-   debugger;
-
+app.controller('CurriculumCtrl', ['$scope', '$http', function($scope, $http) {
    function mapper(card){
         dispData={};
         dispData = _.pick(card, 'name', '', '');
@@ -11,17 +9,10 @@ app.controller('CurriculumCtrl', ['$scope', function($scope) {
         return dispData;
     }
 
-    $.getJSON( 'http://127.0.0.1:8888/api/curriculaList', function( data ) {
-        $scope.data = _.map(data, mapper)
-        debugger
-
-//     var displayData = _.map(data, mapper)
-
-//     var headTempl =  '<table id="curiculaTable" class="table table-striped"> <thead> <tr>';
-//     var seperator =  '</thead>  <tbody> '; 
-//     var footer = '</tbody>  </table>';
-//     var titles = '<th>Name</th> ';
-//     var lines =  ''; 
+    $http.get('http://127.0.0.1:8888/api/curriculaList').success(function(response){
+         $scope.curics = _.map(response, mapper)
+          debugger;
+    });
 
 //    $.each( displayData[0].facess, function( key, val ) {
 //         titles += ' <th> ' + val.symbol + ' </th> '
@@ -42,5 +33,4 @@ app.controller('CurriculumCtrl', ['$scope', function($scope) {
 //        html: table
 //    }).appendTo( "body" );
 
-    });
 }]);

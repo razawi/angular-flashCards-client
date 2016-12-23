@@ -1,6 +1,4 @@
-app.controller('CurriculaCtrl', ['$scope', function($scope) {
-   debugger;
-
+app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
    // show all categories
 
    // later - only per curricyula
@@ -17,14 +15,11 @@ app.controller('CurriculaCtrl', ['$scope', function($scope) {
         return dispData;
     }
 
-    // $.getJSON( 'http://127.0.0.1:8888/api/categoriesList', function( data ) {
-    //     var displayData = _.map(data, catMapper)
+    $http.get('http://127.0.0.1:8888/api/categoriesList').success(function(response){
+        $scope.categories = _.map(response, catMapper)
+        debugger;
 
-    //     var headTempl =  '<table id="curiculaTable" class="table table-striped"> <thead> <tr>';
-    //     var seperator =  '</thead>  <tbody> '; 
-    //     var footer = '</tbody>  </table>';
-    //     var titles = '<th>Name</th> ';
-    //     var lines =  ''; 
+    });
 
     //    $.each( displayData[0].facess, function( key, val ) {
     //         titles += ' <th> ' + val.symbol + ' </th> '
