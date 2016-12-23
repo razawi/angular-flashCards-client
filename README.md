@@ -4,6 +4,11 @@ This Is an angular 1.2 basic UI for the [betterFlashCards project](https://githu
 The file structure Is feature based Instead of the traditional division to 
 ```
 templates 
+---navbar.tmpl.html
+---profile.tmpl.html
+controllers
+---NavbarCtrl.js
+---ProfileCtrl.js
 services 
 componentes 
 etc..
