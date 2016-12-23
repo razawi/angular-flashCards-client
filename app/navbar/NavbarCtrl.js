@@ -1,3 +1,3 @@
 app.controller('NavbarCtrl', function($scope) {
-  $scope.items = ['Profile','Curriculum', 'Curricula', 'card', 'category', 'stash'];
+  $scope.items = ['Profile', 'stash', 'Curriculum', 'Curricula', 'category', 'card'];
 });

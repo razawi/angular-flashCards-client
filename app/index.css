@@ -1,10 +1,10 @@
+/*320px, 360px, 375px, 414px, 480px, 568px, 667px, 736px, 768px, 1224px, 1824px*/
+/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px)*/
 
+@media screen and (min-device-width: 667px) {
 
-
-@media screen and (min-device-width: 320px) and (min-width: 320px) {
-
-    .nav-bar{
-        /*background: gray;*/
+    .navbar{
+        background: lightgray;
     }
 
     a{
@@ -14,138 +14,24 @@
 
     .navbar{
       margin: auto;
-      width: 75%;
+      /*width: 75%;*/
       padding: 10px;
     }
-}
 
-
-
-
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-      /*.nav-bar{         background: yellow;     }*/
-}
-
-
-
-
-
-/* Smartphones (landscape) ----------- add max width*/
-/*@media only screen and (min-width : 321px) {  
-     .nav-bar{         background: orange;     }
-}*/
-
-@media screen and (min-device-width: 768px) and (min-width: 768px) {
-
-    .nav-bar{
-        background: red;
+    .title{
+       text-align: center;  
     }
-
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-      .nav-bar{         background: green;     }
-}
-
-
-/* iPhone 4 ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-      .nav-bar{         background: red;     }
-}
-
-/* iPhone 5 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-/* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-/* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-/* Samsung Galaxy S3 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-      .nav-bar{         background: red;     }
-}
-
-/* Samsung Galaxy S4 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-      .nav-bar{         background: red;     }
-}
-
-/* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-      .nav-bar{         background: red;     }
 }
 
 
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      .nav-bar{         background: red;     }
+
+
+/* Smartphones (portrait and landscape) DOESNT WORK----------- */
+@media only screen and (min-device-width : 320px)  {
+      .html{         
+            background: yellow;   
+      }
 }
 
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-      .nav-bar{         background: red;     }
-}
 
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-      .nav-bar{         background: red;     }
-}
-/**********
-iPad 3
-**********/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-      .nav-bar{         background: red;     }
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-      .nav-bar{         background: red;     }
-}
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-      .nav-bar{         background: red;     }
-}
-
-/* Large screens ----------- */
-@media only screen  and (min-width : 1824px) {
-      .nav-bar{         background: red;     }
-}
