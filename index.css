@@ -8,13 +8,13 @@
     }
 
     a{
-        margin: 20px;
+        /*margin: 20px;*/
         padding: 10px;
+        margin: 0 auto;  
     }
 
     .navbar{
       margin: auto;
-      /*width: 75%;*/
       padding: 10px;
     }
 

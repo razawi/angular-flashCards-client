@@ -23,7 +23,7 @@ Otherwise, why do we even display file extensions?
 to run a local environment run the following in terminal
 ```
 git clone https://github.com/razawi/angular-flashCards-client.git
-cd angular-flashCards-client/app
+cd angular-flashCards-client
 bower install
 npm install http-server
 http-server
