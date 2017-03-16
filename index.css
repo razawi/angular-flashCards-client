@@ -1,24 +1,9 @@
-/*320px, 360px, 375px, 414px, 480px, 568px, 667px, 736px, 768px, 1224px, 1824px*/
-/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px)*/
-
-@media screen and (min-device-width: 667px) {
 
 
-
-    .title{
-       text-align: center;  
-    }
+.title{
+      text-align: center;  
 }
 
 
-
-
-
-/* Smartphones (portrait and landscape) DOESNT WORK----------- */
-@media only screen and (min-device-width : 320px)  {
-      .html{         
-            background: yellow;   
-      }
-}
 
 

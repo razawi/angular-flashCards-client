@@ -1,11 +1,49 @@
 <div class="table-list">
 
-    <p class="title">Curriculum Listt</p>
+    <p class="title">Curriculum List</p>
 
-    <table border="1" class="category-list table">
+
+    <!-- as a Dom element -->
+<!--<treecontrol class="tree-classic"
+   tree-model="dataForTheTree"
+   options="treeOptions"
+   on-selection="showSelected(node)"
+   selected-node="node1">
+   employee: {{node.name}} age {{node.age}}
+</treecontrol> -->
+
+<!-- as an attribute -->
+
+<!--<div treecontrol class="tree-classic"
+   tree-model="dataForTheTree"
+   options="treeOptions"
+   on-selection="showSelected(node)"
+   selected-node="node1">
+   employee: {{node.name}} age {{node.age}}
+</div>-->
+
+
+
+<!--
+    <treecontrol class="tree-light" tree-model="treedata" on-selection="showSelected(node)">
+        label: {{node.label}} ({{node.id}})
+    </treecontrol>
+    
+-->
+    
+
+
+    <table class="category-list table">
         
-        <tr>  <th>Name</th> </tr>
-        <tr ng-repeat="c in curics"> <td>{{c.name}}</td> </tr>
+        <tr>  
+            <th>Name</th> 
+            <th>Symbol</th>
+            <th>Text</th>
+        </tr>
+        <tr ng-repeat="c in curics"> 
+            <td>{{c.name}}</td> 
+            <td>{{c.facess[0].symbol}} </td> 
+            <td>{{c.facess[0].text}} </td> </tr>
         <tr><td>Test</td></tr>
         
     </table>
