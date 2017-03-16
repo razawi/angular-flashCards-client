@@ -29,7 +29,7 @@ profile
 
 Otherwise, why do we even display file extensions?
 
-to run a local environment run the following in terminal
+### Running and testing a local environment.
 ```
 git clone https://github.com/razawi/angular-flashCards-client.git
 cd angular-flashCards-client
