@@ -36,3 +36,7 @@ http-server
 
 The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project 
 be sure to checkout the [full project doc](https://github.com/razawi/betterFlashCards)
+
+tested with protractor (jasmine based)
+
+http-server -p 3333
