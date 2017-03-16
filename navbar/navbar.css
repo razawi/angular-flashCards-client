@@ -1,0 +1,23 @@
+.site-header-actions {
+    float: right;
+    margin-top: 3px;
+}
+
+.navbar{
+    background: lightgray;
+}
+
+a{
+    /*margin: 20px;*/
+    padding: 10px;
+    margin: 0 auto;  
+}
+
+.quick-nav{
+    display: inline-block;
+}
+
+.navbar{
+    margin: auto;
+    padding: 10px;
+}

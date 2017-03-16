@@ -34,7 +34,7 @@ Otherwise, why do we even display file extensions?
 git clone https://github.com/razawi/angular-flashCards-client.git
 cd angular-flashCards-client
 bower install
-npm install http-server
+npm install -g http-server
 http-server -p 3333
 protractor .\test\protractor.conf.js
 ```
@@ -42,5 +42,6 @@ protractor .\test\protractor.conf.js
 on your favorite web browser navigate to 
 ```http://127.0.0.1:3333/#/curricula```
 
-The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project 
-be sure to checkout the [full project doc](https://github.com/razawi/betterFlashCards)
+The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project.
+
+Be sure to get a general idea by looking at the [full project doc](https://github.com/razawi/betterFlashCards)

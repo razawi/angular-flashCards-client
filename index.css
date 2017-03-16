@@ -3,20 +3,7 @@
 
 @media screen and (min-device-width: 667px) {
 
-    .navbar{
-        background: lightgray;
-    }
 
-    a{
-        /*margin: 20px;*/
-        padding: 10px;
-        margin: 0 auto;  
-    }
-
-    .navbar{
-      margin: auto;
-      padding: 10px;
-    }
 
     .title{
        text-align: center;  

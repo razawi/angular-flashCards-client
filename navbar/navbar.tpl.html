@@ -1,8 +1,22 @@
 
 <div class="container navbar">
-  <table>
+  <table class="quick-nav">
       <th ng-repeat="item in items" class="navbar-item" ui-sref-active="navbar-active">
         <a ui-sref="app.{{ item | lowercase }}">{{ item }}</a>
       </th>
   </table>
+
+  <div class="site-header-actions">
+      <a class="text-bold site-header-link" href="/login" >Sign in</a>
+      <span class="text-gray">or</span>
+      <a class="text-bold site-header-link" href="/join?source=header-home">Sign up</a>
+  </div>
+
+
+
+<!--
+      <a class="text-bold site-header-link" href="/login" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+      <span class="text-gray">or</span>
+      <a class="text-bold site-header-link" href="/join?source=header-home" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>-->
+
 </div>
