@@ -1,7 +1,10 @@
 app.controller('CurriculumCtrl', ['$scope', '$http',  function($scope, $http) {
    function mapper(card){
         dispData={};
-        dispData = _.pick(card, 'name', '', '');
+        dispData = _.pick(card, 'name', '_id', '');
+
+        // 58427cb283421d13cc040b24
+
         dispData.facess = _.map(card.facess, function (face){
             return _.pick(face, 'symbol', 'text');
         });
@@ -13,6 +16,12 @@ app.controller('CurriculumCtrl', ['$scope', '$http',  function($scope, $http) {
 
     $http.get(apiUrl + 'curriculaList').success(function(response){
          $scope.curics = _.map(response, mapper)
+         
+         $scope.dataForTheTree = $scope.curics;
+        //  { "name" : "Ron", "age" : "29", "children" : [] }
+         
+
+         // $scope.dataForTheTree = dataDisplay;
           debugger;
     });
 
@@ -31,21 +40,21 @@ $scope.treeOptions = {
     }
 }
 
+// $scope.dataForTheTree =
+// [
+//     { "name" : "Joe", "age" : "21", "children" : [
+//         { "name" : "Smith", "age" : "42", "children" : [] },
+//         { "name" : "Gary", "age" : "21", "children" : [
+//             { "name" : "Jenifer", "age" : "23", "children" : [
+//                 { "name" : "Dani", "age" : "32", "children" : [] },
+//                 { "name" : "Max", "age" : "34", "children" : [] }
+//             ]}
+//         ]}
+//     ]},
+//     { "name" : "Albert", "age" : "33", "children" : [] },
+//     { "name" : "Ron", "age" : "29", "children" : [] }
+// ];
 
-$scope.dataForTheTree =
-[
-    { "name" : "Joe", "age" : "21", "children" : [
-        { "name" : "Smith", "age" : "42", "children" : [] },
-        { "name" : "Gary", "age" : "21", "children" : [
-            { "name" : "Jenifer", "age" : "23", "children" : [
-                { "name" : "Dani", "age" : "32", "children" : [] },
-                { "name" : "Max", "age" : "34", "children" : [] }
-            ]}
-        ]}
-    ]},
-    { "name" : "Albert", "age" : "33", "children" : [] },
-    { "name" : "Ron", "age" : "29", "children" : [] }
-];
 
 
 //    $.each( displayData[0].facess, function( key, val ) {
