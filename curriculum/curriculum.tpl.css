@@ -1,3 +1,8 @@
 .category-list tr th{
     width: 12px; 
 }
+
+.symbol{
+    width: 99px;
+    display: inline;
+}

@@ -5,21 +5,23 @@
 
 
 <div>  
-    <p>curricula {{curics[0].name}}  </p>
-    <p>&nbsp &nbsp &nbsp &nbsp &nbsp face symbol {{curics[0].facess[0].symbol}} text  {{curics[0].facess[0].text}}  </p>
+    <!--<p>curricula {{curics[0].name}}  </p>
+    <p>&nbsp &nbsp &nbsp &nbsp &nbsp face symbol {{curics[0].facess[0].symbol}} text  {{curics[0].facess[0].text}}  </p>-->
+
+    <ul ng-repeat="c in curics">
+    <li data-toggle="collapse"  data-target="#demo"> {{c.name}}
+        <a href="http://www.google.com/{{c._id}}" target="_blank"> Go </a>
+    </li>
+    <ul class="collapse">
+        <li ng-repeat="f in c.facess">
+            <div class="symbol">{{f.symbol}}</div> {{f.text}}
+        </li>
+    </ul>
+    </ul>
 
 </div>
 <span>
 
-
-<!--
-<div treecontrol class="tree-light"
-   tree-model="dataForTheTree"
-   options="treeOptions"
-   on-selection="showSelected(node)"
-   selected-node="node1">
-   Curricula: {{node.name}} id {{node._id}}
-</div>-->
 
 
 <!--    
@@ -36,4 +38,17 @@
             <td>{{c.facess[0].text}} </td> </tr>
         
     </table>-->
+
+<span>
+
+<!--
+<div treecontrol class="tree-light"
+   tree-model="dataForTheTree"
+   options="treeOptions"
+   on-selection="showSelected(node)"
+   selected-node="node1">
+   Curricula: {{node.name}} id {{node._id}}
+</div>-->
+
+
 </div>
