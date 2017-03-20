@@ -4,29 +4,35 @@
 
     <div class="panel-group" id="collapsibleDisplay" ng-repeat="c in curics"> 
         <div class="panel panel-default">
+
             <div class="panel-heading">       
                 <div class="panel-title">
+
                 <button class="accordion-toggle" data-toggle="collapse" 
                         href="#collapseFacess{{$index}}"> + </button>
                 <div class="curriculaLine"> {{c.name}}
 
                     <!--==== todo export to widget ===-->
                     <div class="dataWidget">
-                         <a href="http://www.google.com/{{c._id}}" target="_blank" 
-                           class="curriculumLink curriculaLine" >
-                           <img src="./res/icons/link.png" alt="Go" width="24" height="24">
-                        </a>
+
+                        <div class="curriculumLink curriculumEdit curriculaLine">
+                            <a href="http://www.google.com/{{c._id}}" target="_blank" >
+                              <img class="png-icon" src="./res/icons/link.png"> 
+                            </a>
+                        </div>
 
                         <div class="curriculumEdit curriculaLine"> 
                             <button> 
-                                <img class="png-icon" src="./res/icons/edit.png" style="width: 24px; height: 24px;"> 
+                                <img class="png-icon" src="./res/icons/edit.png"> 
                             </button>     
                         </div>
+
                         <div class="curriculumDelete curriculaLine"> 
                              <button> 
-                                <img class="png-icon" src="./res/icons/delete.png" style="width: 24px; height: 24px;"> 
+                                <img class="png-icon" src="./res/icons/delete.png"> 
                             </button> 
                          </div>
+
                     </div>
 
                  <!--============__________=======-->

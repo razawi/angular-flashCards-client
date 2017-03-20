@@ -5,25 +5,35 @@
 
 .collapseIcon{
     width: 22px;
-    display: inline;12
+    display: inline;
 }
 
 .curriculaLine{
    display: inline;  
 }
 
+
+/*==== todo move to widget =====*/
+
+
 .dataWidget{
     float:right;
 }
 
-
-.curriculumDelete
-{
-    margin-left: 10px;
+.curriculumEdit > button > img{
+    width: 24px; 
+    height: 24px;
 }
 
-.curriculumEdit
-{
-    margin-left: 10px;
+.curriculumDelete > button > img{
+    width: 20px; 
+    height: 20px;
 }
 
+.curriculumLink > a > img{
+    width: 20px; 
+    height: 20px;
+}
+
+
+/*========______________=========*/
