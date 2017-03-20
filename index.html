@@ -9,9 +9,6 @@
   <title>flashCards App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link type="text/css" rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link type="text/css" rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>-->
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./index.css" />
@@ -20,6 +17,10 @@
       
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+
 </head>
 <body>
 
@@ -28,15 +29,18 @@
   <![endif]-->
 
   <div ui-view="navbar"></div>
-
   <div class="main" ui-view="main"></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/lodash/dist/lodash.js"></script>
+
+  <!--load component-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/.min.js"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+<script src="bower_components/angular-loading/angular-loading.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bower_components/angular-loading/angular-loading.css"/>
+
 
   <!-- APP -->
   <script src="app.js"></script>

@@ -1,4 +1,4 @@
-app.controller('CurriculumCtrl', ['$scope', '$http',  function($scope, $http) {
+app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scope, $http, $loading) {
    function mapper(card){
         dispData={};
 
@@ -15,6 +15,11 @@ app.controller('CurriculumCtrl', ['$scope', '$http',  function($scope, $http) {
 
     $http.get(apiUrl + 'curriculaList').success(function(response){
          $scope.curics = _.map(response, mapper);
+         debugger;
+         // $loading.finish('curriculas');
     });
+
+    debugger;
+    $loading.start('users');
 
 }]);
