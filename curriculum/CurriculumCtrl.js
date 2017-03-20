@@ -21,6 +21,11 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
     });
 
     $loading.start('users');
+
+    // todo move to separate widget controller
+
+
+    // ===============================
     
 
 }]);
