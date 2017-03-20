@@ -20,6 +20,48 @@
     float:right;
 }
 
+/*.curriculumEdit{
+    width: 34px; 
+    height: 34px; 
+}
+
+.curriculumDelete{
+    width: 34px; 
+    height: 34px; 
+}
+
+.curriculumLink{
+    width: 34px; 
+    height: 34px; 
+}*/
+
+.curriculumEdit > button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.curriculumLink > a{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.curriculumDelete > button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
 .curriculumEdit > button > img{
     width: 24px; 
     height: 24px;

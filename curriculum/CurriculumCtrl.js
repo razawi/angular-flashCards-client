@@ -16,7 +16,7 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
 
     $http.get(apiUrl + 'curriculaList').success(function(response){
          $scope.curics = _.map(response, mapper);
-         debugger;
+         //debugger;
          // $loading.finish('curriculas');
     });
 
