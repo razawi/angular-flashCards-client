@@ -19,7 +19,7 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
          // $loading.finish('curriculas');
     });
 
-    debugger;
-    $loading.start('users');
+    //$loading.start('users');
+    
 
 }]);

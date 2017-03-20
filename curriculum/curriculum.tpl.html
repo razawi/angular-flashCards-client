@@ -8,25 +8,26 @@
         <div class="panel panel-default">
             <div class="panel-heading">       
                 <h4 class="panel-title">
-                <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess{{$index}}"> + </button>
+                <button class="accordion-toggle" data-toggle="collapse" 
+                        href="#collapseFacess{{$index}}"> + </button>
                 <div class="curriculaLine"> {{c.name}}
-                <div class="widgetsBar">
-                <a href="http://www.google.com/{{c._id}}" target="_blank" class="curriculumLink curriculaLin">Go</a>
-
-                <link rel="icon" type="image/png" href="../res/icons/link.png" />
-                <!--<link rel="icon" type="image/png" href="./res/icons/link.png" />-->
-                <div class="curriculumEdit curriculaLine"> Edit </div>
-                <div class="curriculumDelete curriculaLine"> Delete </div>
-                </div>
+                    <div class="widgetsBar">
+                        <a href="http://www.google.com/{{c._id}}" target="_blank" 
+                           class="curriculumLink curriculaLine" >
+                           <img src="./res/icons/link.png" alt="Go" width="24" height="24">
+                        </a>
+                        <div class="curriculumEdit curriculaLine"> Edit </div>
+                        <div class="curriculumDelete curriculaLine"> Delete </div>
+                    </div>
                 </div>
                 </h4>
             </div>
 
             <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
                 <div class="panel-body">
-                <div ng-repeat="f in c.facess">
-                    <div class="symbol">{{f.symbol}}</div> {{f.text}}
-                </div>
+                    <div ng-repeat="f in c.facess">
+                        <div class="symbol">{{f.symbol}}</div> {{f.text}}
+                    </div>
                 </div>
             </div>
         </div>
