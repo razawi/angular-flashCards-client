@@ -2,111 +2,25 @@
 
 <p class="title">Curriculum List</p>
 
-
-
-<div id="collapsibleDisplay">  
-    <!--<p>curricula {{curics[0].name}}  </p>
-    <p>&nbsp &nbsp &nbsp &nbsp &nbsp face symbol {{curics[0].facess[0].symbol}} text  {{curics[0].facess[0].text}}  </p>-->
-
-    <ul ng-repeat="c in curics">
-    <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess"> + </button>
-        <li class="curriculaLine"> {{c.name}}
-            <a href="http://www.google.com/{{c._id}}" target="_blank"> Go </a>
-        </li>
-
-    <div class="collapse" id="collapseFacess"> 
-        <ul>
-            <li ng-repeat="f in c.facess">
-                <div class="symbol">{{f.symbol}}</div> {{f.text}}
-            </li>
-        </ul>
-    </div>
-    </ul>
-
-    <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-
-    <div id="demo" class="collapse">
-    Lorem ipsum dolor text....
-    </div>
-
-</div>
-
-<span>
-<span>
-<span>
-
-
-<div class="panel-group" id="accordion">
+<div ng-repeat="c in curics">
+  <div class="panel-group" id="collapsibleDisplay"> 
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Collapsible Group Item #1
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  <div class="panel-heading">       
+    <h4 class="panel-title">
+      <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess{{$index}}"> + </button>
+      <div class="curriculaLine"> {{c.name}}
+        <a href="http://www.google.com/{{c._id}}" target="_blank"> Go </a>
       </div>
+    </h4>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Collapsible Group Item #2
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Collapsible Group Item #3
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+  <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
+    <div class="panel-body">
+      <div ng-repeat="f in c.facess">
+        <div class="symbol">{{f.symbol}}</div> {{f.text}}
       </div>
     </div>
   </div>
 </div>
-
-
-<!--    
-    <table class="category-list table">
-        
-        <tr>  
-            <th>Name</th> 
-            <th>Symbol</th>
-            <th>Text</th>
-        </tr>
-        <tr ng-repeat="c in curics"> 
-            <td>{{c.name}}</td> 
-            <td>{{c.facess[0].symbol}} </td> 
-            <td>{{c.facess[0].text}} </td> </tr>
-        
-    </table>-->
-
-<span>
-
-<!--
-<div treecontrol class="tree-light"
-   tree-model="dataForTheTree"
-   options="treeOptions"
-   on-selection="showSelected(node)"
-   selected-node="node1">
-   Curricula: {{node.name}} id {{node._id}}
-</div>-->
-
-
-</div>
+</div> 
+</div>   
