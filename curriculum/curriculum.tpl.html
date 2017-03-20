@@ -1,30 +1,28 @@
-<div class="table-list">
-
 <h3 class="title">Curriculum List</h3>
 
 <div ng-repeat="c in curics">
   <div class="panel-group" id="collapsibleDisplay"> 
-  <div class="panel panel-default">
-  <div class="panel-heading">       
-    <h4 class="panel-title">
-      <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess{{$index}}"> + </button>
-      <div class="curriculaLine"> {{c.name}}
-      <div class="widgetsBar">    
-        <a href="http://www.google.com/{{c._id}}" target="_blank" class="curriculumLink curriculaLin"> Go </a>
-        <div class="curriculumEdit curriculaLine"> Edit </div>
-        <div class="curriculumDelete curriculaLine"> Delete </div>
-      </div>
-      </div>
-    </h4>
-    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">       
+            <h4 class="panel-title">
+            <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess{{$index}}"> + </button>
+            <div class="curriculaLine"> {{c.name}}
+            <div class="widgetsBar">
+              <a href="http://www.google.com/{{c._id}}" target="_blank" class="curriculumLink curriculaLin"> Go </a>
+              <div class="curriculumEdit curriculaLine"> Edit </div>
+              <div class="curriculumDelete curriculaLine"> Delete </div>
+            </div>
+            </div>
+            </h4>
+        </div>
 
-  <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
-    <div class="panel-body">
-      <div ng-repeat="f in c.facess">
-        <div class="symbol">{{f.symbol}}</div> {{f.text}}
-      </div>
+        <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
+            <div class="panel-body">
+            <div ng-repeat="f in c.facess">
+                <div class="symbol">{{f.symbol}}</div> {{f.text}}
+            </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div> 
+  </div> 
 </div>   
