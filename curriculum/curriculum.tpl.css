@@ -1,6 +1,6 @@
-.category-list tr th{
+/*.category-list tr th{
     width: 12px; 
-}
+}*/
 
 .symbol{
     width: 99px;
@@ -9,9 +9,24 @@
 
 .collapseIcon{
     width: 22px;
-    display: inline;
+    display: inline;12
 }
 
 .curriculaLine{
    display: inline;  
+}
+
+.widgetsBar{
+    float:right;
+}
+
+
+.curriculumDelete
+{
+    margin-left: 10px;
+}
+
+.curriculumEdit
+{
+    margin-left: 10px;
 }

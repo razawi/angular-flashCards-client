@@ -1,6 +1,6 @@
 <div class="table-list">
 
-<p class="title">Curriculum List</p>
+<h3 class="title">Curriculum List</h3>
 
 <div ng-repeat="c in curics">
   <div class="panel-group" id="collapsibleDisplay"> 
@@ -9,7 +9,11 @@
     <h4 class="panel-title">
       <button class="accordion-toggle" data-toggle="collapse" href="#collapseFacess{{$index}}"> + </button>
       <div class="curriculaLine"> {{c.name}}
-        <a href="http://www.google.com/{{c._id}}" target="_blank"> Go </a>
+      <div class="widgetsBar">    
+        <a href="http://www.google.com/{{c._id}}" target="_blank" class="curriculumLink curriculaLin"> Go </a>
+        <div class="curriculumEdit curriculaLine"> Edit </div>
+        <div class="curriculumDelete curriculaLine"> Delete </div>
+      </div>
       </div>
     </h4>
     </div>
