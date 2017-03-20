@@ -1,26 +1,38 @@
+<h3 class="title">Curriculum List</h3>
 
 <div dw-loading="users" dw-loading-options="{text: 'Loading curriculas...'}" class="curricula-list">
 
-    <h3 class="title">Curriculum List</h3>
-
-    <div ng-repeat="c in curics">
-    <div class="panel-group" id="collapsibleDisplay"> 
+    <div class="panel-group" id="collapsibleDisplay" ng-repeat="c in curics"> 
         <div class="panel panel-default">
             <div class="panel-heading">       
-                <h4 class="panel-title">
+                <div class="panel-title">
                 <button class="accordion-toggle" data-toggle="collapse" 
                         href="#collapseFacess{{$index}}"> + </button>
                 <div class="curriculaLine"> {{c.name}}
-                    <div class="widgetsBar">
-                        <a href="http://www.google.com/{{c._id}}" target="_blank" 
+
+                    <!--==== todo export to widget ===-->
+                    <div class="dataWidget">
+                         <a href="http://www.google.com/{{c._id}}" target="_blank" 
                            class="curriculumLink curriculaLine" >
                            <img src="./res/icons/link.png" alt="Go" width="24" height="24">
                         </a>
-                        <div class="curriculumEdit curriculaLine"> Edit </div>
-                        <div class="curriculumDelete curriculaLine"> Delete </div>
+
+                        <div class="curriculumEdit curriculaLine"> 
+                            <button> 
+                                <img class="png-icon" src="./res/icons/edit.png" style="width: 24px; height: 24px;"> 
+                            </button>     
+                        </div>
+                        <div class="curriculumDelete curriculaLine"> 
+                             <button> 
+                                <img class="png-icon" src="./res/icons/delete.png" style="width: 24px; height: 24px;"> 
+                            </button> 
+                         </div>
                     </div>
+
+                 <!--============__________=======-->
+
                 </div>
-                </h4>
+                </div>
             </div>
 
             <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
@@ -32,5 +44,5 @@
             </div>
         </div>
     </div> 
-    </div>
+    
 </div>      
