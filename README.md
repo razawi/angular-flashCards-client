@@ -45,3 +45,20 @@ on your favorite web browser navigate to
 The [API Server](https://github.com/razawi/flash-cards-server) Is a more mature project.
 
 Be sure to get a general idea by looking at the [full project doc](https://github.com/razawi/betterFlashCards)
+
+
+
+
+
+
+
+## TODO
+* map API calls URL's for server adjustments
+* make widget for link,edit,delete
+* UI for card
+* UI pop ups for login and sign up 
+* fix load directive or get new one 
+* should the link also be a button? make logic for It 
+* button logic wwith params - Inside widget CTRL 
+* Think about editing 
+* should all but cards have a description?

@@ -1,7 +1,6 @@
 app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
 
     function cardMapper(card){
-           debugger;
         dispData={};
         dispData = _.pick(card, 'name', '_id', '');
         dispData.facess = _.map(card.facess, function (face){
