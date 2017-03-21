@@ -15,7 +15,7 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
 
-
+    // catch querystring - get right domain 
     $http.get('https://better-flash-cards-api.herokuapp.com/api/categoriesList').success(function(response){
         $scope.categories = _.map(response, catMapper)
         debugger;
