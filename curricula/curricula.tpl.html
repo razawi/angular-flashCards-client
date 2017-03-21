@@ -1,12 +1,55 @@
-<div class="table-list">
 
-    <p class="title">Categories In curricula</p>
+<h3 class="title">Categories In curricula</h3>
 
-    <table border="1" class="category-list table">
-        
-        <tr>  <th>Name</th> </tr>
-        <tr ng-repeat="c in categories"> <td>{{c.symbol}}</td> </tr>
-        <tr><td>Test</td></tr>
-        
-    </table>
-</div>
+<div dw-loading="users" dw-loading-options="{text: 'Loading curriculas...'}" class="category-list">
+
+    <div class="panel-group" id="collapsibleDisplay" ng-repeat="c in categories"> 
+        <div class="panel panel-default">
+
+            <div class="panel-heading">       
+                <div class="panel-title">
+
+                <button class="accordion-toggle" data-toggle="collapse" 
+                        href="#collapseFacess{{$index}}"> + </button>
+                <div class="curriculaLine"> {{c.symbol}}
+
+                    <!--==== todo export to widget ===-->
+                    <div class="dataWidget">
+
+                        <div class="curriculumLink curriculumEdit curriculaLine">
+                            <a href="/#/categ_id={{c._id}}" target="_blank" >
+                              <img class="png-icon" src="./res/icons/link.png"> 
+                            </a>
+                        </div>
+
+                        <div class="curriculumEdit curriculaLine"> 
+                            <button ng-click="editClicked()"> 
+                                <img class="png-icon" src="./res/icons/edit.png"> 
+                            </button>     
+                        </div>
+
+                        <div class="curriculumDelete curriculaLine"> 
+                             <button ng-click="deleteClicked()"> 
+                                <img class="png-icon" src="./res/icons/delete.png"> 
+                            </button> 
+                         </div>
+
+                    </div>
+
+                 <!--============__________=======-->
+
+                </div>
+                </div>
+            </div>
+
+            <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
+                <div class="panel-body">
+                    <div ng-repeat="f in c.facess">
+                        <div class="symbol">{{f.symbol}}</div> {{f.text}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+</div>      
