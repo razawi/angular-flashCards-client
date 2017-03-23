@@ -11,8 +11,8 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
     }
 
     // catch querystring - get right domain 
-    $http.get('https://better-flash-cards-api.herokuapp.com/api/cardsList').success(function(response){
-        $scope.categories = _.map([response[0]], cardMapper)
+    $http.get(configData.url + '/cardsList').success(function(response){
+        $scope.card = _.map([response[0]], cardMapper)
         debugger;
 
     });

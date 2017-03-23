@@ -11,10 +11,7 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
         return dispData;
     }
 
-    // todo make config file and baseurl
-    var apiUrl = 'https://better-flash-cards-api.herokuapp.com/api/'; //todo main configuration file
-
-    $http.get(apiUrl + 'curriculaList').success(function(response){
+    $http.get(configData.url + '/curriculaList').success(function(response){
          $scope.curics = _.map(response, mapper);
          //debugger;
          // $loading.finish('curriculas');
