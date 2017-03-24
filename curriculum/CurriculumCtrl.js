@@ -19,18 +19,5 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
 
     $loading.start('users');
 
-    $scope.editClicked = function (){
-        alert("edit");
-    }
-
-   $scope.deleteClicked = function (){
-        alert("delete");
-    }
-
-    // todo move to separate widget controller
-
-
-    // ===============================
-    
 
 }]);

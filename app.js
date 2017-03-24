@@ -2,6 +2,6 @@ var app = angular.module('app', ['ui.router', 'darthwade.dwLoading']);
 
 
 app.run(function($rootScope) {
-    debugger;
+    // debugger;
     // $scope.inited = true;
 });

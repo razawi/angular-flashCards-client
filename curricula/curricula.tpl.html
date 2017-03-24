@@ -11,34 +11,7 @@
 
                 <button class="accordion-toggle" data-toggle="collapse" 
                         href="#collapseFacess{{$index}}"> + </button>
-                <div class="curriculaLine"> {{c.symbol}}
-
-                    <!--==== todo export to widget ===-->
-                    <div class="dataWidget">
-
-                        <div class="curriculumLink curriculumEdit curriculaLine">
-                            <a href="/#/category?categ_id={{c._id}}" target="_blank" >
-                              <img class="png-icon" src="./res/icons/link.png"> 
-                            </a>
-                        </div>
-
-                        <div class="curriculumEdit curriculaLine"> 
-                            <button ng-click="editClicked()"> 
-                                <img class="png-icon" src="./res/icons/edit.png"> 
-                            </button>     
-                        </div>
-
-                        <div class="curriculumDelete curriculaLine"> 
-                             <button ng-click="deleteClicked()"> 
-                                <img class="png-icon" src="./res/icons/delete.png"> 
-                            </button> 
-                         </div>
-
-                    </div>
-
-                 <!--============__________=======-->
-
-                </div>
+                <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> {{c.symbol}}      </div>
                 </div>
             </div>
 
