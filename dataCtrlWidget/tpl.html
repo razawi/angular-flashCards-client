@@ -1,0 +1,21 @@
+<div class="dataWidget" ng-controller="dataWidgetCtrl">
+
+    <div class="dataLink dataLine">
+        <a href="/#/curricula?curic_id={{c._id}}" target="_blank" >
+            <img class="png-icon" src="./res/icons/link.png"> 
+        </a>
+    </div>
+
+    <div class="dataEdit dataLine"> 
+        <button ng-click="editClicked()"> 
+            <img class="png-icon" src="./res/icons/edit.png"> 
+        </button>     
+    </div>
+
+    <div class="dataDelete dataLine"> 
+            <button ng-click="deleteClicked()"> 
+            <img class="png-icon" src="./res/icons/delete.png"> 
+        </button> 
+    </div>
+
+</div>
