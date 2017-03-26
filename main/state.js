@@ -5,7 +5,7 @@ app.config(['$stateProvider', function($stateProvider) {
     .state('app.profile', {
       url: '/profile',
       templateUrl: 'myprofile/profile.tpl.html',
-      controller: 'myprofile/ProfileCtrl'
+      controller: 'ProfileCtrl'
     })
     .state('app.curricula', {
       url: '/curricula',
@@ -31,6 +31,16 @@ app.config(['$stateProvider', function($stateProvider) {
       url: '/card',
       templateUrl: 'card/card.tpl.html',
       controller: 'CardCtrl'
+    })
+    .state('app.login', {
+      url: '/login',
+      templateUrl: 'login/tpl.html',
+      controller: 'LogInCtrl'
+    })
+    .state('app.signup', {
+      url: '/signup',
+      templateUrl: 'signup/tpl.html',
+      controller: 'SignUpCtrl'
     });
     
 }]);
