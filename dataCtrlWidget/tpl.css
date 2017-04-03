@@ -6,6 +6,7 @@
 
 .dataWidget{
     float:right;
+    height: 14px;
 }
 
 .dataEdit > button{
@@ -36,17 +37,17 @@
 }
 
 .dataEdit > button > img{
-    width: 24px; 
-    height: 24px;
+    width: 16px; 
+    height: 14px;
 }
 
 .dataDelete > button > img{
-    width: 20px; 
-    height: 20px;
+    width: 14px; 
+    height: 14px;
 }
 
 .dataLink > a > img{
-    width: 20px; 
-    height: 20px;
+    width: 14px; 
+    height: 14px;
 }
 

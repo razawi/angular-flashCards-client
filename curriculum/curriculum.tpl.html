@@ -2,24 +2,26 @@
 
 <div dw-loading="users" dw-loading-options="{text: 'Loading curriculas...'}" class="curricula-list">
 
-    <div class="panel-group" id="collapsibleDisplay" ng-repeat="c in curics"> 
-        <div class="panel panel-default">
+    <div class="container">
+        <div class="panel-group" id="collapsibleDisplay" ng-repeat="c in curics"> 
+            <div class="panel panel-default">
 
-            <div class="panel-heading">       
-                <div class="panel-title">
+                <div class="panel-heading">       
+                    <div class="panel-title">
 
-                <button class="accordion-toggle" data-toggle="collapse" 
-                        href="#collapseFacess{{$index}}"> + </button>
+                    <button class="accordion-toggle" data-toggle="collapse" 
+                            href="#collapseFacess{{$index}}"> + </button>
 
-                 <span> {{c.name}} </span>
-                 <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> {{c.name}} </div>
+                    <span> {{c.name}} </span>
+                    <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> {{c.name}} </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
-                <div class="panel-body">
-                    <div ng-repeat="f in c.facess">
-                        <div class="symbol">{{f.symbol}}</div> {{f.text}}
+                <div class="collapse panel-collapse" id="collapseFacess{{$index}}"> 
+                    <div class="panel-body">
+                        <div ng-repeat="f in c.facess">
+                            <div class="symbol">{{f.symbol}}</div> {{f.text}}
+                        </div>
                     </div>
                 </div>
             </div>
