@@ -1,0 +1,32 @@
+
+.w3-container {
+    border-style: groove;
+    margin: auto;
+    width: 75%;
+    /*border: 3px solid green;*/
+    padding: 10px;
+
+
+}
+
+.card-face{
+    display: flex;              
+    flex-direction: row;            
+    flex-wrap: nowrap;               
+    justify-content: space-between; 
+    background-color: lightyellow;
+    text-align: center;
+}
+
+/*.card-face .dataWidget{
+}*/
+
+.card-face .card-text{
+    font-weight: 600;
+    margin:0 auto;
+}
+
+.card-face .card-symbol{
+    font-weight: 600;
+    float: left;
+}

@@ -50,15 +50,17 @@ Be sure to get a general idea by looking at the [full project doc](https://githu
 
 
 
-
-
 ## TODO
 * map API calls URL's for server adjustments
-* make widget for link,edit,delete
 * UI for card
 * UI pop ups for login and sign up 
 * fix load directive or get new one 
-* should the link also be a button? make logic for It 
-* button logic wwith params - Inside widget CTRL 
+* should the link also be a button? make logic for It
+
+* button logic with params - Inside widget CTRL 
 * Think about editing 
+    * ng-form validating forms and subforms before saving
+
 * should all but cards have a description?
+
+* on server side: require('faker') for fake users

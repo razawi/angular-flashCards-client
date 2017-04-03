@@ -1,1 +1,13 @@
-<p>Card</p>
+<h3 class="title">Card</h3>
+
+<div dw-loading="users" dw-loading-options="{text: 'Loading curriculas...'}" class="category-list">
+
+    <div class="w3-container" ng-repeat="f in card.facess"> 
+        <div class="card-face">
+            <div class="card-symbol"> {{f.symbol}} </div>
+            <div class="card-text"> {{f.text}} </div>
+            <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> </div>
+        </div>
+    </div> 
+
+</div>    

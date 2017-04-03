@@ -12,7 +12,7 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
 
     // catch querystring - get right domain 
     $http.get(configData.url + '/cardsList').success(function(response){
-        $scope.card = _.map([response[0]], cardMapper)
+        $scope.card = _.map([response[0]], cardMapper)[0]
         debugger;
 
     });
