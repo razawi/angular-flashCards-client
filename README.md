@@ -52,7 +52,6 @@ Be sure to get a general idea by looking at the [full project doc](https://githu
 
 ## TODO
 * map API calls URL's for server adjustments
-* UI for card
 * UI pop ups for login and sign up 
 * fix load directive or get new one 
 * should the link also be a button? make logic for It
