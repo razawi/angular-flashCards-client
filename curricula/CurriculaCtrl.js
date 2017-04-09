@@ -16,6 +16,13 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
     }
 
     // catch querystring - get right domain 
+    
+    var curid = window.location.href.split('?')[1].split('cur_id=')[1].split('&')[0];
+    $scope.reflink = "category?cat_id";
+    
+    
+    debugger;
+
     $http.get(configData.url + '/categoriesList').success(function(response){
         $scope.categories = _.map(response, catMapper)
         debugger;

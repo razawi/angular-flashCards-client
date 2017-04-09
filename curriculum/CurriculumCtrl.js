@@ -11,6 +11,9 @@ app.controller('CurriculumCtrl', ['$scope', '$http', '$loading',  function($scop
         return dispData;
     }
 
+
+    $scope.reflink = "curricula?cur_id";
+
     $http.get(configData.url + '/curriculaList').success(function(response){
          $scope.curics = _.map(response, mapper);
          //debugger;

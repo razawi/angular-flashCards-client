@@ -14,6 +14,11 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
 
+ debugger;
+    
+    var curid = window.location.href.split('?')[1].split('cat_id=')[1].split('&')[0];
+    $scope.reflink = "card?card_id";
+
     // catch querystring - get right domain 
     $http.get(configData.url + '/cardsList').success(function(response){
          $scope.cards = _.map(response, mapper)
