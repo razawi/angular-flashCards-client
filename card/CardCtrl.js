@@ -1,3 +1,4 @@
+
 app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
 
     function cardMapper(card){
@@ -10,11 +11,9 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
 
-debugger;
     // catch querystring - get right domain 
     $http.get(configData.url + '/cardsList').success(function(response){
         $scope.card = _.map([response[40]], cardMapper)[0]
-        debugger;
-
+        setTimeout(function(){ $('.dataLink').hide() }, 120);
     });
 }]);
