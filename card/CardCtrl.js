@@ -11,9 +11,14 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
 
-    // catch querystring - get right domain 
-    $http.get(configData.url + '/cardsList').success(function(response){
-        $scope.card = _.map([response[40]], cardMapper)[0]
+    var card_id = ''
+    try {
+      card_id = window.location.href.split('?')[1].split('card_id=')[1].split('&')[0];
+    } catch(ex){}
+
+    $http.get(configData.url + '/card?id=' + card_id).success(function(response){
+        debugger;
+        $scope.card = _.map([response[0]], cardMapper)[0]
         setTimeout(function(){ $('.dataLink').hide() }, 120);
     });
 }]);

@@ -21,8 +21,9 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.reflink = "card?card_id";
 
-    // catch querystring - get right domain 
-    $http.get(configData.url + '/cardsList').success(function(response){
+    // fix dbInit for cards.category and category.schema on server, or switch to hardcoded _id systema 
+    // '/category?id=' + cat_id
+    $http.get(configData.url + '/cardslist').success(function(response){
          $scope.cards = _.map(response, mapper)
           debugger;
     });
