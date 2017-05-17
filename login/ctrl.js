@@ -13,7 +13,7 @@ app.controller('LogInCtrl', ['$scope', '$http', '$loading', 'RandomUserFactory',
 
     function login(username, password) {
       UserFactory.login(username, password).then(function success(response) {
-        vm.user = response.data;
+        vm.user = response.data.user;
       }, handleError);
     }
 

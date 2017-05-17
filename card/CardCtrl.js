@@ -16,6 +16,7 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
       card_id = window.location.href.split('?')[1].split('card_id=')[1].split('&')[0];
     } catch(ex){}
 
+debugger;
     $http.get(configData.url + '/card?id=' + card_id).success(function(response){
         debugger;
         $scope.card = _.map([response[0]], cardMapper)[0]

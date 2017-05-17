@@ -7,7 +7,7 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
 
    function catMapper(categ){
         dispData={};
-        dispData = _.pick(categ, 'symbol', '_id', '');
+        dispData = _.pick(categ, 'name', '_id', '');
         dispData.facess = _.map(categ.facess, function (face){
             return _.pick(face, 'symbol', 'text');
         });
@@ -23,8 +23,10 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
     } catch(ex){}
 
     $scope.reflink = "category?cat_id";
+    $scope.delLink = configData.url + '/api/category/';
 
-    $http.get(configData.url + '/curricula?id=' + curid).success(function(response){
+debugger;
+    $http.get(configData.url + '/curricula/' + curid).success(function(response){
         $scope.categories = _.map(response, catMapper)
         debugger;
 

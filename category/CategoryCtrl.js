@@ -20,9 +20,12 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
     } catch(ex){}
 
     $scope.reflink = "card?card_id";
+    
+    //$scope.delLink = configData.url + '/api/card/' + curid;
 
     // fix dbInit for cards.category and category.schema on server, or switch to hardcoded _id systema 
     // '/category?id=' + cat_id
+    debugger;
     $http.get(configData.url + '/cardslist').success(function(response){
          $scope.cards = _.map(response, mapper)
           debugger;

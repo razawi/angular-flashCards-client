@@ -13,6 +13,8 @@
   </form>
 </div>
 
+  <h2>Welcome {{vm.user.username}}</h2>
+
 <div>
   <button ng-click="vm.getRandomUser()">Get User</button>
   <pre ng-bind="vm.randomUser | json"></pre>
