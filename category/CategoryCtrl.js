@@ -14,6 +14,8 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
     
+
+    $scope.type = 'card';
     var cat_id = ''
     try {
       cat_id = window.location.href.split('?')[1].split('cat_id=')[1].split('&')[0];

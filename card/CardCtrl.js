@@ -11,6 +11,7 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
         return dispData;
     }
 
+    $scope.type = 'face';
     var card_id = ''
     try {
       card_id = window.location.href.split('?')[1].split('card_id=')[1].split('&')[0];

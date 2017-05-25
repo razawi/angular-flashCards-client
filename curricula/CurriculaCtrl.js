@@ -17,6 +17,8 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
 
     // catch querystring - get right domain 
     
+   
+    $scope.type = 'category';
     var curid = '';
     try{
         curid = window.location.href.split('?')[1].split('cur_id=')[1].split('&')[0];
@@ -25,7 +27,6 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.reflink = "category?cat_id";
     $scope.delLink = configData.url + '/api/category/';
 
-debugger;
     $http.get(configData.url + '/curricula/' + curid).success(function(response){
         $scope.categories = _.map(response, catMapper)
         debugger;
