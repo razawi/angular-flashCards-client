@@ -27,7 +27,8 @@ app.controller('CurriculaCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.reflink = "category?cat_id";
     $scope.delLink = configData.url + '/api/category/';
 
-    $http.get(configData.url + '/curricula/' + curid).success(function(response){
+    debugger;
+    $http.get(configData.url + '/category/?cur_id=' + curid).success(function(response){
         $scope.categories = _.map(response, catMapper)
         debugger;
 
