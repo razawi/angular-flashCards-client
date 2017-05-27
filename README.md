@@ -2,7 +2,7 @@
 This Is an angular 1.2 basic mangement UI for the [betterFlashCards project](https://github.com/razawi/betterFlashCards) 
 
 
-### [Demo](https://git.heroku.com/flash-notes-admin.git)
+### [Demo](https://flash-notes-admin.herokuapp.com/)
 
 ### Get around the project structure overview Info
 
