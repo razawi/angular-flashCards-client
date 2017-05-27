@@ -16,9 +16,9 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
     
 
     $scope.type = 'card';
-    var cat_id = ''
+    var catid = ''
     try {
-      cat_id = window.location.href.split('?')[1].split('cat_id=')[1].split('&')[0];
+      catid = window.location.href.split('?')[1].split('cat_id=')[1].split('&')[0];
     } catch(ex){}
 
     $scope.reflink = "card?card_id";
@@ -28,7 +28,7 @@ app.controller('CategoryCtrl', ['$scope', '$http', function($scope, $http) {
     // fix dbInit for cards.category and category.schema on server, or switch to hardcoded _id systema 
     // '/category?id=' + cat_id
     debugger;
-    $http.get(configData.url + '/cardslist').success(function(response){
+    $http.get(configData.url + '/card?category=' + catid).success(function(response){
          $scope.cards = _.map(response, mapper)
           debugger;
     });
