@@ -1,11 +1,10 @@
 app.controller('dataWidgetCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.editClicked = function (type, id){
-        debugger;
+        // debugger;
         alert("edit");
     }
 
    $scope.deleteClicked = function (id){
-        debugger;
         type = $scope.type;
         if (type ==='curricula'){
             $http.delete(configData.url + '/curricula/' + id).success(function(response){
@@ -13,8 +12,6 @@ app.controller('dataWidgetCtrl', ['$scope', '$http', function($scope, $http) {
             }); 
         } else if (type ==='category'){
             $http.delete(configData.url + '/category/' + id).success(function(response){
-                debugger;
-                alert("deleteD");
                 // $loading.finish('curriculas');
             }); 
         } else if (type ==='card'){
@@ -25,8 +22,6 @@ app.controller('dataWidgetCtrl', ['$scope', '$http', function($scope, $http) {
         } else if (type ==='face'){
             // change to edit card
             $http.delete(configData.url + '/card/' + id).success(function(response){
-                debugger;
-                alert("deleteD");
                 // $loading.finish('curriculas');
             }); 
         }

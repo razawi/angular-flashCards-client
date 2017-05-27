@@ -18,7 +18,7 @@ app.controller('CardCtrl', ['$scope', '$http', function($scope, $http) {
     } catch(ex){}
 
     $http.get(configData.url + '/card?id=' + card_id).success(function(response){
-        debugger;
+        // debugger;
         $scope.card = _.map([response[0]], cardMapper)[0]
         setTimeout(function(){ $('.dataLink').hide() }, 120); // todo change to class and css mechanizm
     });
