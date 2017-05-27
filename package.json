@@ -1,0 +1,27 @@
+{
+  "name": "flash-notes-admin",
+  "version": "0.0.1",
+  "description": "This Is an angular 1.2 basic mangement UI for the [betterFlashCards project](https://github.com/razawi/betterFlashCards)",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razawi/angular-flashCards-client.git"
+  },
+  "author": "raz kronenberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/razawi/angular-flashCards-client/issues"
+  },
+  "homepage": "https://github.com/razawi/angular-flashCards-client#readme"
+}
