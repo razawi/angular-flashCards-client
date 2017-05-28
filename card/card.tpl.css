@@ -1,9 +1,27 @@
 
+body{
+    text-align: center;
+}
+
 .w3-container {
     border-style: groove;
     margin: auto;
-    width: 70%;
+    width: 80%;
     padding: 10px;
+}
+
+.card-wrapper{
+    text-align: center;
+    border: solid black;
+    top:100px;
+    width: 520px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+.card-title{
+    padding-top: 14px;
+    padding-bottom: 18px;
 }
 
 .card-face{
@@ -13,15 +31,69 @@
     justify-content: space-between; 
     background-color: lightyellow;
     text-align: center;
-    padding: 8px;
+    padding: 2px;
+    padding-bottom: 10px; 
+    padding-top: 10px;
+}
+
+#add-face{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 32px;
+}
+
+.add-face{
+    padding-top:10px;
+}
+
+.add-face > p{
+    font-size: 36px;
+    padding: 5px;
 }
 
 .card-face .card-text{
-    font-size: 18px;
+    font-size: 14px;
     margin:0 auto;
+    padding: 10px;
 }
 
 .card-face .card-symbol{
-    font-size: 18px;
+    font-size: 14px;
     float: left;
+    padding: 10px;
+}
+
+.user-knowledge{
+    display: inline-block;
+    position: absolute;
+    bottom: 15%;
+    width: 20%;
+    left: 40%;
+}
+
+.dont-know-button{
+    display:inline-block;
+    padding-right: 20px;
+}
+
+#dont-know-button{
+    height: 42px;
+    width: 42px;
+    background: url('../res/icons/dontknow.png');
+    background-size: 42px 42px;
+    border: none;
+}
+
+.know-button{
+    display:inline-block;
+    padding-left: 20px;
+}
+
+#know-button{
+    height: 42px;
+    width: 42px;
+    background: url('../res/icons/know.png');
+    background-size: 42px 42px;
+    border: none;
 }

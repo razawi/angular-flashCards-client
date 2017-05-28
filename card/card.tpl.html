@@ -1,17 +1,46 @@
 
 <!--todo : make editable as first card edit-->
 
-<h3 class="title">Card : {{card.name}}</h3> 
+<!--<h3 class="title">Card : {{card.name}}</h3> -->
 
 <div dw-loading="users" dw-loading-options="{text: 'Loading curriculas...'}" class="category-list">
+    
+    <div class="card-wrapper">
+        <div class="card-title"> 
+            <h1> {{card.name}} </h1>  
+        </div> 
 
-
-    <div class="w3-container" ng-repeat="f in card.facess"> 
-        <div class="card-face">
-            <div class="card-symbol"> {{f.symbol}} </div>
-            <div class="card-text"> {{f.text}} </div>
-            <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> </div>
+        <div class="w3-container" ng-repeat="f in card.facess"> 
+            <div class="card-face">
+                <div class="card-symbol"> {{f.symbol}} </div>
+                <div class="card-text"> {{f.text}} </div>
+                <div class="curriculaLine" ng-include="'../dataCtrlWidget/tpl.html'"> </div>
+            </div>
+        </div> 
+        <div class="add-face"> 
+            <button id="add-face"> + </button> 
         </div>
-    </div> 
 
+
+
+        <div class="user-knowledge">
+            <div class="dont-know-button"> 
+                <button id="dont-know-button"> </button>
+            </div>
+            <div class="know-button"> 
+                <button id="know-button"> </button>
+            </div>
+        </div>
+
+    </div>   
+
+
+    <div class="on-edit">
+        <div class="dont-save-button">
+        
+        </div>
+        <div class="save-button"> 
+
+        </div>
+    </div>
 </div>    
