@@ -1,0 +1,52 @@
+language: node_js
+sudo: false
+node_js:
+  - "6"
+  - "7"
+
+env:
+  global:
+    - SAUCE_USERNAME=angular-ci
+    - SAUCE_ACCESS_KEY=9b988f434ff8-fbca-8aa4-4ae3-35442987
+    - BROWSER_STACK_USERNAME=angularteam1
+    - BROWSER_STACK_ACCESS_KEY=BWCd4SynLzdDcv8xtzsB
+    - LOGS_DIR=/tmp/protractor-build/logs
+    - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
+    - CXX=g++-4.8
+  matrix:
+    - JOB=full
+    - JOB=smoke
+    - JOB=bstack
+
+matrix:
+  allow_failures:
+    - env: "JOB=smoke"
+    - env: "JOB=bstack"
+  exclude:
+    - env: JOB=smoke
+      node_js: "7"
+    - env: JOB=bstack
+      node_js: "7"
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+before_install:
+  - g++-4.8 --version
+
+before_script:
+  - npm run install_testapp
+  - npm run pretest
+  - mkdir -p $LOGS_DIR
+  - ./scripts/travis_setup.sh
+
+script:
+  - ./scripts/testserver.sh
+  - ./scripts/test_on_travis.sh
+
+after_script:
+  - ./scripts/print_logs.sh

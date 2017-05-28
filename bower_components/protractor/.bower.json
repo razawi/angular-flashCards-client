@@ -1,0 +1,14 @@
+{
+  "name": "protractor",
+  "homepage": "https://github.com/angular/protractor",
+  "version": "5.1.2",
+  "_release": "5.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.1.2",
+    "commit": "ea72d5588aef983aa84705abd1ad1afa36065be7"
+  },
+  "_source": "https://github.com/angular/protractor.git",
+  "_target": "^5.1.1",
+  "_originalSource": "protractor"
+}

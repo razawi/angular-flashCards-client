@@ -1,0 +1,40 @@
+# Shared between .npmignore and .gitignore
+
+yarn.lock
+chromedriver.log
+libpeerconnection.log
+xmloutput*
+npm-debug.log
+.idea/
+.vscode/
+*.DS_Store
+*.swp
+selenium/
+
+# Development folders
+
+.github/
+built/spec/
+debugging/
+docs/
+lib/
+scripts/
+spec/
+stress/
+testapp/
+website/
+exampleTypescript/*.js
+exampleTypescript/node_modules/
+exampleTypescript/tmp/
+
+# Development files
+
+.clang-format
+.gitattributes
+.gitignore
+.jshintrc
+.npmignore
+.travis.yml
+circle.yml
+logo.svg
+release.md
