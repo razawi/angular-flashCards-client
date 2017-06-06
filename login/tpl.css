@@ -1,0 +1,20 @@
+.loginForm{
+    margin: 40px 90px;
+    height: 200px;
+    width:400px;
+    display: block;
+    border: 1px black solid;
+    margin: 0 auto;
+}
+
+.loginForm > label{
+    margin: 0 auto;
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+}
+
+.loginForm > button{
+    margin: 0 auto;
+    display: block;
+}
