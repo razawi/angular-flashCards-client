@@ -1,4 +1,6 @@
-var app = angular.module('app', ['ui.router', 'darthwade.dwLoading']);
+var app = angular.module('app', ['ui.router', 'darthwade.dwLoading'], function config($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+  });
 
 app.run(function($rootScope) {
 
